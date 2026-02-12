@@ -14,9 +14,9 @@
             overflow-x: hidden;
         }
 
-        /* 1. 頂部綠色導覽列 */
+        /* 1. 頂部導覽列：純綠色背景 */
         .navbar {
-            background-color: #3fb950; /* 綠色背景 */
+            background-color: #3fb950; /* 綠色風格 */
             height: 60px;
             display: flex;
             align-items: center;
@@ -30,11 +30,11 @@
             display: flex;
             align-items: center;
         }
-        /* 方塊圖標：替代壞掉的皇冠，確保永遠顯示 */
+        /* 方塊圖標：替代損壞的圖片 */
         .cube-icon {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             color: #000;
-            margin-right: 10px;
+            margin-right: 12px;
         }
         .navbar .brand { 
             color: #000;
@@ -42,9 +42,9 @@
             font-weight: bold; 
         }
 
-        /* 2. 上分區：英雄展示區 */
+        /* 2. 上分區：英雄展示 (緊湊綠色) */
         .section-hero {
-            min-height: 60vh;
+            min-height: 55vh;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -53,59 +53,55 @@
             padding: 40px 20px;
             text-align: center;
         }
-        h1 { font-size: 2.5rem; color: #fff; margin-bottom: 10px; }
-        .sub-title { color: #4ade80; font-size: 1.4rem; font-weight: bold; letter-spacing: 5px; margin-bottom: 40px; }
+        h1 { font-size: 2.5rem; color: #fff; margin-bottom: 8px; }
+        .sub-title { color: #3fb950; font-size: 1.3rem; font-weight: bold; letter-spacing: 5px; margin-bottom: 30px; }
 
-        /* 綠色風格複製卡 (照圖優化) */
+        /* 綠色發光複製卡 */
         .copy-card {
             background: linear-gradient(145deg, #238636, #2ea043);
             border: 1px solid #3fb950;
             border-radius: 12px;
-            padding: 30px;
-            width: 330px;
+            padding: 25px;
+            width: 320px;
             cursor: pointer;
             transition: 0.3s;
-            box-shadow: 0 10px 30px rgba(46, 160, 67, 0.4);
+            box-shadow: 0 0 20px rgba(63, 185, 80, 0.4);
             color: #fff;
         }
-        .copy-card:hover {
-            transform: translateY(-5px);
-            filter: brightness(1.1);
-        }
+        .copy-card:hover { transform: translateY(-3px); filter: brightness(1.1); }
         .ip-box {
             background: rgba(0, 0, 0, 0.3);
-            padding: 15px;
-            border-radius: 8px;
+            padding: 12px;
+            border-radius: 6px;
             font-family: monospace;
-            color: #fff;
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             margin: 15px 0;
             border: 1px solid rgba(255,255,255,0.1);
         }
 
-        /* 3. 下分區：伺服器介紹 (白色簡約) */
+        /* 3. 下分區：白色介紹區 (依圖優化) */
         .section-intro {
-            padding: 60px 5%;
+            padding: 50px 5%;
             background-color: #ffffff;
-            color: #1f2328;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             gap: 20px;
-            max-width: 1000px;
-            margin: 0 auto;
         }
         .intro-item {
-            padding: 30px;
-            border-radius: 12px;
             background: #fff;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            padding: 30px;
+            width: 350px;
+            border-radius: 12px;
             text-align: center;
-            border: 1px solid #eee;
+            color: #1f2328;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
         }
-        .intro-item i { font-size: 2.2rem; color: #238636; margin-bottom: 20px; }
-        .intro-item h3 { margin-bottom: 10px; }
+        .intro-item i { font-size: 2.2rem; color: #3fb950; margin-bottom: 20px; }
+        .intro-item h3 { font-size: 1.3rem; margin-bottom: 12px; }
+        .intro-item p { color: #57606a; font-size: 0.95rem; line-height: 1.6; }
 
-        /* 4. 頁尾 (深色背景) */
+        /* 4. 頁尾：深色 */
         .footer {
             background-color: #0d1117;
             padding: 50px 20px;
@@ -114,26 +110,24 @@
         }
         .social-btn {
             display: inline-flex;
-            width: 55px; height: 55px; border-radius: 12px;
+            width: 50px; height: 50px; border-radius: 10px;
             align-items: center; justify-content: center;
-            color: #fff; font-size: 1.6rem; text-decoration: none;
+            color: #fff; font-size: 1.5rem; text-decoration: none;
             margin: 0 10px 20px;
-            transition: 0.3s;
         }
         .yt { background: #ff0000; }
         .dc { background: #5865f2; }
-        .social-btn:hover { transform: scale(1.1); }
-        .copyright { color: #484f58; font-size: 0.85rem; margin-top: 20px; border-top: 1px solid #21262d; padding-top: 20px; }
+        .copyright { color: #484f58; font-size: 0.8rem; margin-top: 20px; }
 
-        /* 複製成功的彈窗 */
+        /* 複製成功提示 */
         #toast {
             visibility: hidden; background: #238636; color: white;
-            padding: 12px 30px; border-radius: 8px; position: fixed;
-            bottom: 40px; left: 50%; transform: translateX(-50%);
-            font-weight: bold; z-index: 2000; box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            padding: 12px 25px; border-radius: 6px; position: fixed;
+            bottom: 30px; left: 50%; transform: translateX(-50%);
+            font-weight: bold; z-index: 2000;
         }
-        #toast.show { visibility: visible; animation: popUp 2.5s; }
-        @keyframes popUp { 0%,100% {opacity:0; bottom: 20px;} 20%,80% {opacity:1; bottom: 40px;} }
+        #toast.show { visibility: visible; animation: fadeInOut 2s; }
+        @keyframes fadeInOut { 0%,100% {opacity:0;} 20%,80% {opacity:1;} }
     </style>
 </head>
 <body>
@@ -150,9 +144,9 @@
         <div class="sub-title">帝國永續發展</div>
 
         <div class="copy-card" onclick="copyIP('ryfn.falix.gg')">
-            <span style="font-weight: bold; letter-spacing: 1px;">Java Edition (PC)</span>
+            <span style="font-weight: bold;">Java Edition (PC)</span>
             <div class="ip-box">ryfn.falix.gg</div>
-            <div style="font-size: 0.85rem; opacity: 0.9;">點擊區塊複製伺服器地址</div>
+            <div style="font-size: 0.8rem; opacity: 0.9;">點擊複製 IP 加入遊戲</div>
         </div>
     </div>
 
@@ -160,30 +154,30 @@
         <div class="intro-item">
             <i class="fas fa-shield-alt"></i>
             <h3>穩定運行</h3>
-            <p>24/7 高效能主機，保證低延遲的遊戲體驗。</p>
+            <p>使用高品質主機，提供 24/7 不間斷服務，確保您的生存旅程流暢無阻。</p>
         </div>
         <div class="intro-item">
             <i class="fas fa-users"></i>
             <h3>友好社群</h3>
-            <p>嚴謹管理團隊，營造公平且友善的生存環境。</p>
+            <p>嚴格管理團隊，杜絕任何作弊與不良行為，營造公平、互助的遊戲環境。</p>
         </div>
     </div>
 
     <footer class="footer">
-        <div style="color:white; margin-bottom:25px; font-weight:bold; font-size:1.2rem;">加入我們的社群</div>
+        <div style="color:white; margin-bottom:20px; font-weight:bold;">加入我們的社群</div>
         <a href="https://youtube.com/@ryfn_falix_gg?si=PlusQ7FQkUUfXm8i" target="_blank" class="social-btn yt"><i class="fab fa-youtube"></i></a>
         <a href="https://discord.gg/3D49QtXgTK" target="_blank" class="social-btn dc"><i class="fab fa-discord"></i></a>
         <div class="copyright">© 2025-2026 Minecraft | 星河伺服器. 版權所有.</div>
     </footer>
 
-    <div id="toast">✅ IP 地址已複製成功！</div>
+    <div id="toast">✅ IP 已複製！</div>
 
     <script>
         function copyIP(text) {
             navigator.clipboard.writeText(text).then(function() {
                 var x = document.getElementById("toast");
                 x.className = "show";
-                setTimeout(function(){ x.className = x.className.replace("show", ""); }, 2500);
+                setTimeout(function(){ x.className = x.className.replace("show", ""); }, 2000);
             });
         }
     </script>
