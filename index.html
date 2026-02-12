@@ -16,7 +16,7 @@
 
         /* 1. 頂部綠色導覽列 */
         .navbar {
-            background-color: #3fb950; /* 綠色風格 */
+            background-color: #3fb950; /* 綠色背景 */
             height: 60px;
             display: flex;
             align-items: center;
@@ -30,12 +30,14 @@
             display: flex;
             align-items: center;
         }
-        .navbar img { 
-            height: 35px; 
-            margin-right: 8px; /* 皇冠與文字的間距 */
+        /* 方塊圖標：替代壞掉的皇冠，確保永遠顯示 */
+        .cube-icon {
+            font-size: 1.5rem;
+            color: #000;
+            margin-right: 10px;
         }
         .navbar .brand { 
-            color: #000; /* 綠色背景配黑字較清晰 */
+            color: #000;
             font-size: 1.3rem; 
             font-weight: bold; 
         }
@@ -47,23 +49,23 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            background: radial-gradient(circle at 50% 50%, #161b22 0%, #0d1117 100%);
+            background: radial-gradient(circle at 50% 50%, #1a2e1a 0%, #0d1117 100%);
             padding: 40px 20px;
             text-align: center;
         }
         h1 { font-size: 2.5rem; color: #fff; margin-bottom: 10px; }
-        .sub-title { color: #3fb950; font-size: 1.4rem; font-weight: bold; letter-spacing: 5px; margin-bottom: 35px; }
+        .sub-title { color: #4ade80; font-size: 1.4rem; font-weight: bold; letter-spacing: 5px; margin-bottom: 40px; }
 
-        /* 綠色風格複製卡 */
+        /* 綠色風格複製卡 (照圖優化) */
         .copy-card {
             background: linear-gradient(145deg, #238636, #2ea043);
             border: 1px solid #3fb950;
             border-radius: 12px;
-            padding: 25px;
-            width: 320px;
+            padding: 30px;
+            width: 330px;
             cursor: pointer;
             transition: 0.3s;
-            box-shadow: 0 10px 30px rgba(46, 160, 67, 0.3);
+            box-shadow: 0 10px 30px rgba(46, 160, 67, 0.4);
             color: #fff;
         }
         .copy-card:hover {
@@ -71,16 +73,17 @@
             filter: brightness(1.1);
         }
         .ip-box {
-            background: rgba(0, 0, 0, 0.2);
-            padding: 12px;
-            border-radius: 6px;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            border-radius: 8px;
             font-family: monospace;
-            font-size: 1.4rem;
+            color: #fff;
+            font-size: 1.5rem;
             margin: 15px 0;
             border: 1px solid rgba(255,255,255,0.1);
         }
 
-        /* 3. 下分區：介紹 (白色背景) */
+        /* 3. 下分區：伺服器介紹 (白色簡約) */
         .section-intro {
             padding: 60px 5%;
             background-color: #ffffff;
@@ -92,46 +95,52 @@
             margin: 0 auto;
         }
         .intro-item {
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            padding: 30px;
+            border-radius: 12px;
+            background: #fff;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
             text-align: center;
             border: 1px solid #eee;
         }
-        .intro-item i { font-size: 2rem; color: #238636; margin-bottom: 15px; }
+        .intro-item i { font-size: 2.2rem; color: #238636; margin-bottom: 20px; }
+        .intro-item h3 { margin-bottom: 10px; }
 
-        /* 4. 頁尾 */
+        /* 4. 頁尾 (深色背景) */
         .footer {
             background-color: #0d1117;
-            padding: 40px 20px;
+            padding: 50px 20px;
             text-align: center;
             border-top: 1px solid #30363d;
         }
         .social-btn {
             display: inline-flex;
-            width: 50px; height: 50px; border-radius: 10px;
+            width: 55px; height: 55px; border-radius: 12px;
             align-items: center; justify-content: center;
-            color: #fff; font-size: 1.5rem; text-decoration: none;
+            color: #fff; font-size: 1.6rem; text-decoration: none;
             margin: 0 10px 20px;
+            transition: 0.3s;
         }
         .yt { background: #ff0000; }
         .dc { background: #5865f2; }
+        .social-btn:hover { transform: scale(1.1); }
+        .copyright { color: #484f58; font-size: 0.85rem; margin-top: 20px; border-top: 1px solid #21262d; padding-top: 20px; }
 
+        /* 複製成功的彈窗 */
         #toast {
             visibility: hidden; background: #238636; color: white;
-            padding: 12px 25px; border-radius: 6px; position: fixed;
-            bottom: 30px; left: 50%; transform: translateX(-50%);
-            font-weight: bold; z-index: 2000;
+            padding: 12px 30px; border-radius: 8px; position: fixed;
+            bottom: 40px; left: 50%; transform: translateX(-50%);
+            font-weight: bold; z-index: 2000; box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
         #toast.show { visibility: visible; animation: popUp 2.5s; }
-        @keyframes popUp { 0%,100% {opacity:0;} 20%,80% {opacity:1;} }
+        @keyframes popUp { 0%,100% {opacity:0; bottom: 20px;} 20%,80% {opacity:1; bottom: 40px;} }
     </style>
 </head>
 <body>
 
     <nav class="navbar">
         <div class="nav-content">
-            <img src="https://cdn.discordapp.com/attachments/1394909988975153212/1471413257305849973/Background_Eraser.png?ex=698ed7e2&is=698d8662&hm=c7d010e26b2930e3d8701ec231924c81b2f2d240187757f9c3d85156cb770d8f&" alt="Logo">
+            <i class="fas fa-cube cube-icon"></i>
             <span class="brand">星河伺服器</span>
         </div>
     </nav>
@@ -141,9 +150,9 @@
         <div class="sub-title">帝國永續發展</div>
 
         <div class="copy-card" onclick="copyIP('ryfn.falix.gg')">
-            <span>Java Edition (PC)</span>
+            <span style="font-weight: bold; letter-spacing: 1px;">Java Edition (PC)</span>
             <div class="ip-box">ryfn.falix.gg</div>
-            <div style="font-size: 0.8rem; opacity: 0.8;">點擊複製 IP 加入遊戲</div>
+            <div style="font-size: 0.85rem; opacity: 0.9;">點擊區塊複製伺服器地址</div>
         </div>
     </div>
 
@@ -151,23 +160,23 @@
         <div class="intro-item">
             <i class="fas fa-shield-alt"></i>
             <h3>穩定運行</h3>
-            <p>24/7 高效能伺服器在線。</p>
+            <p>24/7 高效能主機，保證低延遲的遊戲體驗。</p>
         </div>
         <div class="intro-item">
             <i class="fas fa-users"></i>
             <h3>友好社群</h3>
-            <p>嚴謹管理，杜絕作弊行為。</p>
+            <p>嚴謹管理團隊，營造公平且友善的生存環境。</p>
         </div>
     </div>
 
     <footer class="footer">
-        <div style="color:white; margin-bottom:20px; font-weight:bold;">加入我們的社群</div>
+        <div style="color:white; margin-bottom:25px; font-weight:bold; font-size:1.2rem;">加入我們的社群</div>
         <a href="https://youtube.com/@ryfn_falix_gg?si=PlusQ7FQkUUfXm8i" target="_blank" class="social-btn yt"><i class="fab fa-youtube"></i></a>
         <a href="https://discord.gg/3D49QtXgTK" target="_blank" class="social-btn dc"><i class="fab fa-discord"></i></a>
-        <div style="color:#484f58; font-size:0.8rem; margin-top:20px;">© 2025-2026 星河伺服器. 版權所有.</div>
+        <div class="copyright">© 2025-2026 Minecraft | 星河伺服器. 版權所有.</div>
     </footer>
 
-    <div id="toast">✅ IP 已複製！</div>
+    <div id="toast">✅ IP 地址已複製成功！</div>
 
     <script>
         function copyIP(text) {
