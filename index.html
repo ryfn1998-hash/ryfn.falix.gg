@@ -60,6 +60,33 @@
         }
         .item i { font-size: 2.5rem; color: #3fb950; margin-bottom: 15px; }
 
+        /* 新增：地圖顯示區塊 */
+        .map-section {
+            padding: 60px 5%;
+            text-align: center;
+            background: #0d1117;
+        }
+        .map-container {
+            max-width: 1000px;
+            margin: 30px auto;
+            border: 3px solid #3fb950;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 0 30px rgba(63, 185, 80, 0.2);
+            background: #161b22;
+        }
+        .map-container iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+            display: block;
+        }
+        .map-title {
+            color: #3fb950;
+            margin-bottom: 10px;
+            font-size: 1.8rem;
+        }
+
         /* 右下角懸浮按鈕 */
         .float-btns {
             position: fixed;
@@ -92,6 +119,7 @@
         <i class="fas fa-cube cube-icon"></i>
         <span class="brand">星河伺服器</span>
     </nav>
+
     <div class="hero">
         <h1>探索無限可能的方塊世界</h1>
         <div class="copy-card" onclick="copyIP('ryfn.falix.gg')">
@@ -100,15 +128,27 @@
             <p style="font-size:0.8rem">點擊複製 IP</p>
         </div>
     </div>
+
     <div class="intro">
         <div class="item"><i class="fas fa-shield-alt"></i><h3>穩定運行</h3><p>24/7 高品質服務</p></div>
         <div class="item"><i class="fas fa-users"></i><h3>友好社群</h3><p>公平互助的環境</p></div>
     </div>
+
+    <div class="map-section">
+        <h2 class="map-title"><i class="fas fa-map-marked-alt"></i> 衛星即時地圖</h2>
+        <p>查看帝國領土的最新發展情況</p>
+        <div class="map-container">
+            <iframe src="http://ryfn.falix.gg:20001/"></iframe>
+        </div>
+    </div>
+
     <div class="float-btns">
         <a href="你的YT網址" class="btn yt"><i class="fab fa-youtube"></i></a>
         <a href="你的DC網址" class="btn dc"><i class="fab fa-discord"></i></a>
     </div>
+
     <div id="toast">✅ IP 已複製！</div>
+
     <script>
         function copyIP(t){
             navigator.clipboard.writeText(t);
